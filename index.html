@@ -14,8 +14,8 @@
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: white;
+  background: radial-gradient(circle at top, #000000, #0b0b0b);
+  color: #f5d06f;
   text-align: center;
 }
 
@@ -26,21 +26,23 @@ body {
 }
 
 h1 {
-  color: #facc15;
-  text-shadow: 0 0 10px #facc15;
+  color: #f5d06f;
+  text-shadow: 0 0 12px #d4af37;
+  font-size: 24px;
 }
 
 .card {
-  background: rgba(17, 24, 39, 0.95);
+  background: linear-gradient(145deg, #111111, #000000);
   padding: 18px;
   border-radius: 14px;
   margin-top: 18px;
-  box-shadow: 0 0 15px rgba(250, 204, 21, 0.15);
+  border: 1px solid #d4af37;
+  box-shadow: 0 0 15px rgba(212,175,55,0.2);
 }
 
 button {
-  background: linear-gradient(90deg, #22c55e, #16a34a);
-  color: white;
+  background: linear-gradient(90deg, #d4af37, #b8860b);
+  color: black;
   padding: 14px;
   border: none;
   border-radius: 10px;
@@ -58,27 +60,27 @@ button:hover {
 .banner {
   width: 100%;
   border-radius: 12px;
+  margin-top: 10px;
+  border: 1px solid #d4af37;
 }
 
 iframe {
   border-radius: 12px;
+  border: 1px solid #d4af37;
 }
 
-/* Countdown */
-.timer {
-  font-size: 18px;
-  color: #f87171;
-  margin-top: 10px;
+.urgent {
+  color: #ffcc66;
+  font-size: 13px;
 }
 
-/* Live ticker */
 .ticker {
-  background: #111827;
+  background: #111;
   padding: 10px;
   border-radius: 10px;
   margin-top: 10px;
   font-size: 13px;
-  color: #38bdf8;
+  color: #f5d06f;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -99,16 +101,10 @@ iframe {
 
 <div class="container">
 
-  <h1>🎰 GAMBLING HUB SA PRO 🎰</h1>
-  <p>⚡ Real wins happening live right now</p>
+  <h1>🎰 GAMBLING HUB SA PREMIUM 🎰</h1>
+  <p class="urgent">⚡ Exclusive gold-tier bonuses active now</p>
 
-  <!-- COUNTDOWN -->
-  <div class="card">
-    <p>⏳ BONUS EXPIRES IN:</p>
-    <div class="timer" id="timer">05:00</div>
-  </div>
-
-  <!-- YOUTUBE -->
+  <!-- VIDEO -->
   <div class="card">
     <iframe width="100%" height="220"
       src="https://www.youtube.com/embed/qnq5ed1xeJY"
@@ -120,14 +116,18 @@ iframe {
   <!-- LIVE TICKER -->
   <div class="ticker">
     <div class="marquee">
-      🔥 Player won R3,200 • 🔥 Bonus claimed • 🔥 Free spins activated • 🔥 Big win in progress •
+      🔥 Big Win R3,200 • 🔥 Free Spins Claimed • 🔥 Jackpot Triggered • 🔥 Bonus Active •
     </div>
   </div>
 
   <!-- LUCKYFISH -->
   <div class="card">
     <h2>🔥 LuckyFish Bonus</h2>
-    <p>🎁 25 Habanero Spins + R50</p>
+
+    <!-- IMAGE MOVED HERE -->
+    <img src="https://via.placeholder.com/500x200?text=LuckyFish+25+Spins+%2B+R50" class="banner">
+
+    <p>🎁 25 Habanero Spins + R50 Bonus</p>
 
     <a href="https://record.luckyfishaffiliates.co.za/_Ezt2ovUqf67UOsjNOfgKeWNd7ZgqdRLk/1/" target="_blank">
       <button>👉 CLAIM LUCKYFISH BONUS</button>
@@ -148,25 +148,6 @@ iframe {
   </div>
 
 </div>
-
-<!-- Countdown Script -->
-<script>
-let time = 300;
-const timer = document.getElementById("timer");
-
-setInterval(() => {
-  let minutes = Math.floor(time / 60);
-  let seconds = time % 60;
-
-  timer.innerHTML =
-    (minutes < 10 ? "0" + minutes : minutes) + ":" +
-    (seconds < 10 ? "0" + seconds : seconds);
-
-  time--;
-
-  if (time < 0) time = 300;
-}, 1000);
-</script>
 
 </body>
 </html>
