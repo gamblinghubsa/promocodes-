@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gambling Hub SA - Bonuses & Wins</title>
+<title>Gambling Hub SA - Premium Wins</title>
 
-<!-- LuckyFish Tracking Script -->
+<!-- LuckyFish Tracking -->
 <script type="text/javascript" src="https://js.luckyfishaffiliates.co.za/javascript.php?prefix=Ezt2ovUqf67UOsjNOfgKeWNd7ZgqdRLk&media=918&campaign=1"></script>
 
-<!-- Premium Font -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
@@ -29,7 +28,6 @@ body {
 h1 {
   color: #facc15;
   text-shadow: 0 0 10px #facc15;
-  font-size: 24px;
 }
 
 .card {
@@ -51,34 +49,48 @@ button {
   font-weight: bold;
   margin-top: 10px;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(34,197,94,0.4);
 }
 
 button:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .banner {
   width: 100%;
   border-radius: 12px;
-  margin-top: 10px;
 }
 
 iframe {
   border-radius: 12px;
 }
 
-.small-link {
-  display: block;
+/* Countdown */
+.timer {
+  font-size: 18px;
+  color: #f87171;
   margin-top: 10px;
-  color: #38bdf8;
-  text-decoration: none;
-  font-size: 13px;
 }
 
-.urgent {
-  color: #f87171;
+/* Live ticker */
+.ticker {
+  background: #111827;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
   font-size: 13px;
+  color: #38bdf8;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee {
+  display: inline-block;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 </style>
 </head>
@@ -87,29 +99,35 @@ iframe {
 
 <div class="container">
 
-  <h1>🎰 GAMBLING HUB SA 🎰</h1>
-  <p class="urgent">⚡ Real bonuses. Real wins. Live now.</p>
+  <h1>🎰 GAMBLING HUB SA PRO 🎰</h1>
+  <p>⚡ Real wins happening live right now</p>
 
-  <!-- YOUTUBE VIDEO -->
+  <!-- COUNTDOWN -->
+  <div class="card">
+    <p>⏳ BONUS EXPIRES IN:</p>
+    <div class="timer" id="timer">05:00</div>
+  </div>
+
+  <!-- YOUTUBE -->
   <div class="card">
     <iframe width="100%" height="220"
       src="https://www.youtube.com/embed/qnq5ed1xeJY"
       frameborder="0"
       allowfullscreen>
     </iframe>
+  </div>
 
-    <p>📺 Watch more wins</p>
-    <a class="small-link" href="https://youtube.com/@gamblinghubsa" target="_blank">
-      👉 Visit Gambling Hub SA Channel
-    </a>
+  <!-- LIVE TICKER -->
+  <div class="ticker">
+    <div class="marquee">
+      🔥 Player won R3,200 • 🔥 Bonus claimed • 🔥 Free spins activated • 🔥 Big win in progress •
+    </div>
   </div>
 
   <!-- LUCKYFISH -->
   <div class="card">
     <h2>🔥 LuckyFish Bonus</h2>
-
-    <p>🎁 25 Habanero Spins + R50 Bonus</p>
-    <p>💰 Sign-up rewards available</p>
+    <p>🎁 25 Habanero Spins + R50</p>
 
     <a href="https://record.luckyfishaffiliates.co.za/_Ezt2ovUqf67UOsjNOfgKeWNd7ZgqdRLk/1/" target="_blank">
       <button>👉 CLAIM LUCKYFISH BONUS</button>
@@ -122,10 +140,7 @@ iframe {
 
     <img src="https://raven1-playabets-uploads-bucket.s3.eu-west-1.amazonaws.com/campaign-public/resources/banner/images/img_338.gif" class="banner">
 
-    <p>🎁 100% BONUS up to R3000</p>
-    <p>🎰 + 50 Free Spins</p>
-
-    <p class="urgent">⚡ Limited time offer</p>
+    <p>🎁 100% BONUS up to R3000 + 50 Free Spins</p>
 
     <a href="https://playabets.click/o/PyWZVD?r_id=338&lpage=oDSWNb" target="_blank">
       <button>👉 PLAY PLAYABETS NOW</button>
@@ -133,6 +148,25 @@ iframe {
   </div>
 
 </div>
+
+<!-- Countdown Script -->
+<script>
+let time = 300;
+const timer = document.getElementById("timer");
+
+setInterval(() => {
+  let minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+
+  timer.innerHTML =
+    (minutes < 10 ? "0" + minutes : minutes) + ":" +
+    (seconds < 10 ? "0" + seconds : seconds);
+
+  time--;
+
+  if (time < 0) time = 300;
+}, 1000);
+</script>
 
 </body>
 </html>
